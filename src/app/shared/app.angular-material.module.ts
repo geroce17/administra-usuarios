@@ -8,6 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input'; 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatSidenavModule} from '@angular/material/sidenav'; 
+import {MatPaginatorModule} from '@angular/material/paginator'; 
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
         MatCardModule,
         MatInputModule,
         MatFormFieldModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatPaginatorModule
     ]
     ,
     exports: [
@@ -27,7 +29,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
         MatCardModule,
         MatInputModule,
         MatFormFieldModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatPaginatorModule
     ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA

@@ -1,35 +1,35 @@
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
-      <!-- <p>Auto-resizing sidenav</p> -->
-      <!-- <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <!-- <p>Auto-resizing sidenav</p> -->
+        <!-- <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
       <button (click)="showFiller = !showFiller" mat-raised-button>
         Toggle extra text
       </button> -->
 
-      <div class="sidebar-container">
+        <div class="sidebar-container">
 
-      </div>
+        </div>
 
     </mat-drawer>
 
-    <div class="col-8 offset-2">
+    <div class="col-8 offset-2 mt-4">
         <span class="title">{{title}}</span>
     </div>
-  
+
     <!-- <div class="example-sidenav-content">
       <button type="button" mat-button (click)="drawer.toggle()">
         Toggle sidenav
       </button>
     </div> -->
 
-    <section class="col-8 offset-2 mt-5">
-        <div>
+    <section class="col-8 offset-2 mt-4 mb-3">
+        <div *ngIf="!loading">
             <mat-card *ngFor="let user of users" class="example-card" (click)="drawer.toggle()">
                 <div class="row">
                     <div class="col-8">
                         <mat-card-title-group>
                             <mat-card-title>{{user.first_name}} {{user.last_name}}</mat-card-title>
-                            <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+                            <mat-card-title class="subtitle">{{user.email}}</mat-card-title>
                         </mat-card-title-group>
                     </div>
                     <div class="col-4">
@@ -38,6 +38,8 @@
                 </div>
             </mat-card>
         </div>
+        <mat-paginator [length]="total" [pageSize]="6" aria-label="Select page" (page)="handlePage($event)">
+        </mat-paginator>
     </section>
-  
-  </mat-drawer-container>
+
+</mat-drawer-container>

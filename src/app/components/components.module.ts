@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { UserListComponent } from './user-list/user-list.component';
 import { AppAngularMaterialModule } from '../shared/app.angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,7 +18,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     exports: [
         UserListComponent,
         SidebarComponent
-    ]
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class ComponentsModule { }

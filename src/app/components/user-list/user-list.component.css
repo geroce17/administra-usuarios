@@ -2,6 +2,17 @@
     font-size: 25px;
 }
 
+.subtitle {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.subtitle:hover {
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+}
+
 .avatar {
     border-radius: 50%;
     max-width: 90px;
@@ -19,6 +30,6 @@
     color: white;
 }
 
-.sidebar-container{
+.sidebar-container {
     padding: 10px 5px;
 }

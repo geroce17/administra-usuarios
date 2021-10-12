@@ -1,5 +1,9 @@
-.form-container{
+.form-container {
     width: 50%;
     margin: auto;
     margin-top: 15%;
+}
+
+p {
+    margin: 0px;
 }
