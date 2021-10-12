@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
+// servicios
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -10,21 +14,35 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   public formSubmitted = false;
-  
+
   public loginForm = this.fb.group({
     email: ["", [Validators.required, Validators.email]],
     password: ['', Validators.required]
   })
 
   constructor(
-    private router: Router, private fb: FormBuilder
+    private router: Router, private fb: FormBuilder, private userService: UserService
   ) { }
 
   ngOnInit(): void {
   }
 
-  login(){
-    console.log("login");
+  login() {
+    this.formSubmitted = true;
+    console.log("Enviada");
+    this.userService.login(this.loginForm.value)
+      .subscribe(
+        res => {
+          localStorage.setItem('email', this.loginForm.get('email').value);
+          this.router.navigateByUrl('/');
+        },
+        (error: any) => {
+          if(error.error){
+            localStorage.removeItem('email');
+            localStorage.removeItem('token');
+            Swal.fire('Ha ocurrido un error', error.error.error, 'error');
+          }
+        });
   }
 
 }
