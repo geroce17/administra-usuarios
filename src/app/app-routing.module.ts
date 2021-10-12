@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PagesRoutingModule } from './pages/pages.routing';
+import { AuthRoutingModule } from './auth/auth.routing';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     // {{ HERE NOT FOUND PAGE }}
 ]
 
@@ -11,7 +12,8 @@ const routes: Routes = [
     declarations: [],
     imports: [
         RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'}),
-        PagesRoutingModule
+        PagesRoutingModule,
+        AuthRoutingModule
     ],
     exports: [RouterModule]
 })
