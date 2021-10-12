@@ -1,0 +1,24 @@
+.title {
+    font-size: 25px;
+}
+
+.avatar {
+    border-radius: 50%;
+    max-width: 90px;
+    float: right;
+    margin-top: 0%;
+}
+
+.example-card {
+    cursor: pointer;
+}
+
+.example-card:hover {
+    cursor: pointer;
+    background-color: #7B1FA2;
+    color: white;
+}
+
+.sidebar-container{
+    padding: 10px 5px;
+}

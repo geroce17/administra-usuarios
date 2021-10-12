@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 const base_url = environment.base_url;
 
 import { LoginForm } from '../interfaces/login-form.interface';
+import { ItemUserListInterface } from '../interfaces/item-user-list.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,11 @@ export class UserService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  get token(): string {
-    return localStorage.getItem('token') || '';
-  }
+  // get token(): string {
+  //   return localStorage.getItem('token') || '';
+  // }
 
+  // Envio de datos de formulario para logueo
   login(formData: LoginForm) {
     return this.http.post(`${base_url}/api/login`, formData)
       .pipe(
@@ -30,15 +32,22 @@ export class UserService {
       );
   }
 
-  isAuthenticated() : Observable<boolean> {
+  // Comprobar si se ha almacenado el correo y token de autenticacion correspondiente
+  isAuthenticated(): Observable<boolean> {
     let email = localStorage.getItem('email');
     let token = localStorage.getItem('token');
-    if(email && token){
+    if (email && token) {
       return of(true);
     }
-    else{
+    else {
       return of(false);
     }
+  }
+
+  // Obtiene 
+  getUserList(page: number): Observable<ItemUserListInterface> {
+    return this.http.get(`${base_url}/api/users?page=${page}`)
+      .pipe(map((res: ItemUserListInterface) => res));
   }
 
 }

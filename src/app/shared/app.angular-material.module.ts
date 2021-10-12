@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatInputModule} from '@angular/material/input'; 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatSidenavModule} from '@angular/material/sidenav'; 
 
 @NgModule({
     imports: [
@@ -16,6 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
         MatCardModule,
         MatInputModule,
         MatFormFieldModule,
+        MatSidenavModule
     ]
     ,
     exports: [
@@ -25,6 +27,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
         MatCardModule,
         MatInputModule,
         MatFormFieldModule,
+        MatSidenavModule
     ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA
