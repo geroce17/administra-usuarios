@@ -1,0 +1,36 @@
+<form id="form-sidebar" (submit)="updateUser()" [formGroup]="userDetailForm">
+    <h3 class="text-center">Información personal</h3>
+    <div class="row" style="padding: 0px;">
+        <div>
+            <div class="col-10 offset-1">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input #email matInput type="email" formControlName="email">
+            
+                </mat-form-field>
+            </div>
+        
+            <div class="col-10 offset-1">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input #email matInput type="email" formControlName="first_name">
+            
+                </mat-form-field>
+            </div>
+    
+            <div class="col-10 offset-1">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input #email matInput type="email" formControlName="last_name">
+                </mat-form-field>
+            </div>
+        
+            <div class="row" style="padding: 0px;">
+                <div class="col text-center">
+                    <button mat-raised-button color="primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

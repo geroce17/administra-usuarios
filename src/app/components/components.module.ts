@@ -3,21 +3,24 @@ import { UserListComponent } from './user-list/user-list.component';
 import { AppAngularMaterialModule } from '../shared/app.angular-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { UserDetailSidebarComponent } from './user-detail-sidebar/user-detail-sidebar.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
         UserListComponent,
-        SidebarComponent
+        UserDetailSidebarComponent
     ],
     imports: [
         BrowserModule,
         CommonModule,
-        AppAngularMaterialModule
+        AppAngularMaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
     ],
     exports: [
         UserListComponent,
-        SidebarComponent
+        UserDetailSidebarComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
