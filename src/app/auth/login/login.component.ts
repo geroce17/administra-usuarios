@@ -22,7 +22,13 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router, private fb: FormBuilder, private userService: UserService
-  ) { }
+  ) {
+    this.userService.isAuthenticated()
+      .subscribe(auth => {
+        if (auth)
+          this.router.navigateByUrl('/');
+      })
+  }
 
   ngOnInit(): void {
   }
@@ -34,10 +40,10 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res => {
           localStorage.setItem('email', this.loginForm.get('email').value);
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/home');
         },
         (error: any) => {
-          if(error.error){
+          if (error.error) {
             localStorage.removeItem('email');
             localStorage.removeItem('token');
             Swal.fire('Ha ocurrido un error', error.error.error, 'error');

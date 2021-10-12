@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { of, Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators'
 
 import { environment } from '../../environments/environment';
@@ -27,6 +28,17 @@ export class UserService {
           localStorage.setItem('token', res.token);
         })
       );
+  }
+
+  isAuthenticated() : Observable<boolean> {
+    let email = localStorage.getItem('email');
+    let token = localStorage.getItem('token');
+    if(email && token){
+      return of(true);
+    }
+    else{
+      return of(false);
+    }
   }
 
 }
