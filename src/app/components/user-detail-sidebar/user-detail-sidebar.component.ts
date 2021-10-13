@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 import { FormBuilder } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { ItemUser } from '../../interfaces/item-user-list.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-detail-sidebar',
@@ -47,11 +48,18 @@ export class UserDetailSidebarComponent implements OnInit, OnChanges {
     this.userDetailForm.controls['last_name'].setValue(this.userInfo.last_name);
   }
 
+  // Actualiza informacion de usuario con los datos del formulario
   updateUser() {
-    console.log(this.userDetailForm.value);
+    this.userService.updateUser(this.userDetailForm.value)
+      .subscribe((data: any) => {
+        if(data.updatedAt){
+          Swal.fire('Sucess', "The user " + data.data.email + " has been updated successfully at " + data.updatedAt, 'success')
+          .then(() => this.close());
+        }
+      })
   }
 
-  close(){
+  close() {
     this.closeElement.emit(true);
   }
 

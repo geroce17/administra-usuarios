@@ -58,5 +58,13 @@ export class UserService {
         map((data: ItemUser) => data));
   }
 
+  // Actualiza la informacion de usuario por id
+  updateUser(formData: ItemUser) {
+    const { id, ...data } = formData;
+    return this.http.put(`${base_url}/api/users/${id}`, {
+      data
+    });
+  }
+
 }
 

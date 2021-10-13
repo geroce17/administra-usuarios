@@ -9,34 +9,35 @@
                 <mat-form-field class="example-form-field" appearance="fill">
                     <mat-label>Email</mat-label>
                     <input #email matInput type="email" formControlName="email">
-            
+
                 </mat-form-field>
             </div>
-        
+
             <div class="col-10 offset-1">
                 <mat-form-field class="example-form-field" appearance="fill">
                     <mat-label>First Name</mat-label>
                     <input #email matInput type="email" formControlName="first_name">
-            
+
                 </mat-form-field>
             </div>
-    
+
             <div class="col-10 offset-1">
                 <mat-form-field class="example-form-field" appearance="fill">
                     <mat-label>Last Name</mat-label>
                     <input #email matInput type="email" formControlName="last_name">
                 </mat-form-field>
             </div>
-        
+
             <div class="row" style="padding: 0px;">
                 <div class="col-12 text-center">
-                    <button mat-raised-button color="primary">Save changes</button>
-                </div>
-                <div class="col-12 text-center mt-3">
-                    <button mat-raised-button (click)="close()">Cancel</button>
+                    <button mat-raised-button type="submit" color="primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
 
 </form>
+
+<div class="col-12 text-center mt-3">
+    <button mat-raised-button (click)="close()">Cancel</button>
+</div>

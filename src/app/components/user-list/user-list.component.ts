@@ -83,6 +83,7 @@ export class UserListComponent implements OnInit, AfterViewInit {
   closeSideBar(res: any, el: any) {
     if(res){
       el.toggle();
+      this.updateList();
     }
   }
 
