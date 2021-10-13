@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
 import { UserDetailSidebarComponent } from './user-detail-sidebar/user-detail-sidebar.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { UserPostsComponent } from './user-posts/user-posts.component';
 
 @NgModule({
     declarations: [
         UserListComponent,
-        UserDetailSidebarComponent
+        UserDetailSidebarComponent,
+        UserPostsComponent
     ],
     imports: [
         BrowserModule,

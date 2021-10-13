@@ -1,0 +1,20 @@
+<div style="padding: 15px 10px">
+    <div *ngIf="!loading">
+        <mat-card  *ngFor="let post of postsList" class="card-post mb-2">
+            <mat-card-title class="title">
+                {{post.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{post.body}}
+            </mat-card-subtitle>
+            <mat-card-actions align="end">
+                <button mat-icon-button color="warn" (click)="deletePost(post.id)">
+                    <span class="material-icons">
+                        delete
+                    </span>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+</div>

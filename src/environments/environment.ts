@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  base_url: "https://reqres.in"
+  base_url: "https://reqres.in",
+  base_url_posts: "https://jsonplaceholder.typicode.com"
 };
 
 /*

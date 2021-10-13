@@ -22,6 +22,7 @@ export class UserDetailSidebarComponent implements OnInit, OnChanges {
   @Output() closeElement = new EventEmitter<boolean>();
 
   public isSubmitted = false;
+  public loading = false;
 
   public userDetailForm = this.fb.group({
     id: [this.userInfo.id || ''],
@@ -34,27 +35,33 @@ export class UserDetailSidebarComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    this.loading = true;
     this.userDetailForm.controls['id'].setValue(this.userInfo.id);
     this.userDetailForm.controls['email'].setValue(this.userInfo.email);
     this.userDetailForm.controls['first_name'].setValue(this.userInfo.first_name);
     this.userDetailForm.controls['last_name'].setValue(this.userInfo.last_name);
+    this.loading = false;
     // this.userInfo = this.userInfo;
   }
 
   ngOnInit() {
+
+    this.loading = true;
     this.userDetailForm.controls['id'].setValue(this.userInfo.id);
     this.userDetailForm.controls['email'].setValue(this.userInfo.email);
     this.userDetailForm.controls['first_name'].setValue(this.userInfo.first_name);
     this.userDetailForm.controls['last_name'].setValue(this.userInfo.last_name);
+    this.loading = false;
+
   }
 
   // Actualiza informacion de usuario con los datos del formulario
   updateUser() {
     this.userService.updateUser(this.userDetailForm.value)
       .subscribe((data: any) => {
-        if(data.updatedAt){
+        if (data.updatedAt) {
           Swal.fire('Sucess', "The user " + data.data.email + " has been updated successfully at " + data.updatedAt, 'success')
-          .then(() => this.close());
+            .then(() => this.close());
         }
       })
   }

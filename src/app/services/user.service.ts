@@ -7,9 +7,11 @@ import { tap, map } from 'rxjs/operators'
 import { environment } from '../../environments/environment';
 
 const base_url = environment.base_url;
+const base_url_posts = environment.base_url_posts;
 
 import { LoginForm } from '../interfaces/login-form.interface';
 import { ItemUserListInterface, ItemUser } from '../interfaces/item-user-list.interface';
+import { ItemPostUser } from '../interfaces/item-post-user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -51,7 +53,7 @@ export class UserService {
   }
 
   // Obtiene informacion de usuario por id
-  getUser(id: number) {
+  getUser(id: number): Observable<ItemUser> {
     return this.http.get(`${base_url}/api/users/${id}`)
       .pipe(
         map((res: any) => res.data),
@@ -64,6 +66,19 @@ export class UserService {
     return this.http.put(`${base_url}/api/users/${id}`, {
       data
     });
+  }
+
+  // Obtiene los post del API atraves el id del usuario
+  getUserPosts(id: number): Observable<ItemPostUser[]> {
+    return this.http.get(`${base_url_posts}/posts?userId=${id}`)
+      .pipe(
+        map((res: ItemPostUser[]) => res)
+      );
+  }
+
+  // Borrar post mediante su id
+  deleteUserPost(id: number){
+    return this.http.get(`${base_url_posts}/posts/${id}`);
   }
 
 }

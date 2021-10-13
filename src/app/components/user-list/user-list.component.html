@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container" autosize style="height: 100%;">
+<mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <!-- <p>Auto-resizing sidenav</p> -->
         <!-- <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
@@ -13,7 +13,7 @@
 
     </mat-drawer>
 
-    <div class="col-8 offset-2 mt-4">
+    <div class="col-8 offset-2 mt-3">
         <span class="title">{{title}}</span>
     </div>
 
@@ -23,7 +23,7 @@
       </button>
     </div> -->
 
-    <section class="col-8 offset-2 mt-4 mb-3">
+    <section class="col-8 offset-2 mt-3 mb-3">
         <div *ngIf="!loading">
             <mat-card *ngFor="let user of users" class="example-card" (click)="openSideBar(drawer, user.id)">
                 <div class="row">

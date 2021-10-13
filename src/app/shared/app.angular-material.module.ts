@@ -9,6 +9,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatPaginatorModule} from '@angular/material/paginator'; 
+import {MatListModule} from '@angular/material/list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 
 @NgModule({
     imports: [
@@ -19,7 +21,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         MatInputModule,
         MatFormFieldModule,
         MatSidenavModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatListModule,
+        MatProgressSpinnerModule
     ]
     ,
     exports: [
@@ -30,7 +34,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         MatInputModule,
         MatFormFieldModule,
         MatSidenavModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatListModule,
+        MatProgressSpinnerModule
     ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA
