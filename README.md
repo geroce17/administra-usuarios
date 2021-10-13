@@ -1,14 +1,17 @@
 # Requirements
 
 NodeJS lastest estable version:
+
 https://nodejs.org/es/
 
 Angular installation:
 run this command after nodejs installation
-'npm install -g @angular/cli'
+
+`npm install -g @angular/cli`
 
 Install NodeModules to start the project:
-'npm install'
+
+`npm install`
 
 # AngularTest
 
