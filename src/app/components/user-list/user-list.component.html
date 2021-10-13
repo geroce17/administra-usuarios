@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container" autosize>
+<mat-drawer-container class="example-container animate__animated animate__fadeIn" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <!-- <p>Auto-resizing sidenav</p> -->
         <!-- <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
@@ -26,7 +26,7 @@
 
     <div *ngIf="!loading" class="col-8 offset-2 mt-3 mb-3" style="height: calc(100vh - 154px);">
         <div>
-            <mat-card *ngFor="let user of users" class="example-card" (click)="openSideBar(drawer, user.id)">
+            <mat-card *ngFor="let user of users" class="example-card animate__animated animate__fadeIn" (click)="openSideBar(drawer, user.id)">
                 <div class="row">
                     <div class="col-8">
                         <mat-card-title-group>

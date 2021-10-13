@@ -1,5 +1,5 @@
-<div *ngIf="!loading">
-    <form id="form-sidebar" (submit)="updateUser()" [formGroup]="userDetailForm">
+<div *ngIf="!loading" class="animate__animated animate__fadeIn">
+    <form id="form-sidebar" class="animate__animated animate__fadeIn" (submit)="updateUser()" [formGroup]="userDetailForm">
         <h3 class="text-center">Información personal</h3>
         <div class="avatar-container text-center">
             <img style="width: 100px; margin: auto;" [src]="userInfo.avatar" alt="">
@@ -47,6 +47,6 @@
         <button mat-raised-button (click)="close()">Close</button>
     </div>
 </div>
-<div *ngIf="loading" class="text-center" style="width: 25vw; position: relative; top: calc(50vh - 84px);">
+<div *ngIf="loading" class="text-center animate__animated animate__fadeIn" style="width: 25vw; position: relative; top: calc(50vh - 84px);">
     <mat-spinner style="margin:0 auto;"></mat-spinner>
 </div>
