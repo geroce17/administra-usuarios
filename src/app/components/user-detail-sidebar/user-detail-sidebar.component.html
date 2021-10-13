@@ -1,6 +1,9 @@
 <form id="form-sidebar" (submit)="updateUser()" [formGroup]="userDetailForm">
     <h3 class="text-center">Información personal</h3>
-    <div class="row" style="padding: 0px;">
+    <div class="avatar-container text-center">
+        <img style="width: 100px; margin: auto;" [src]="userInfo.avatar" alt="">
+    </div>
+    <div class="row mt-3" style="padding: 0px;">
         <div>
             <div class="col-10 offset-1">
                 <mat-form-field class="example-form-field" appearance="fill">
@@ -26,8 +29,11 @@
             </div>
         
             <div class="row" style="padding: 0px;">
-                <div class="col text-center">
-                    <button mat-raised-button color="primary">Guardar cambios</button>
+                <div class="col-12 text-center">
+                    <button mat-raised-button color="primary">Save changes</button>
+                </div>
+                <div class="col-12 text-center mt-3">
+                    <button mat-raised-button (click)="close()">Cancel</button>
                 </div>
             </div>
         </div>

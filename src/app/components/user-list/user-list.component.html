@@ -7,7 +7,8 @@
       </button> -->
 
         <div class="sidebar-container">
-            <app-user-detail-sidebar></app-user-detail-sidebar>
+            <app-user-detail-sidebar *ngIf="selectedUser" [user]="selectedUser" (closeElement)="closeSideBar($event, drawer)"></app-user-detail-sidebar>
+            <div *ngIf="!selectedUser" style="width: 400px;">cargando...</div>
         </div>
 
     </mat-drawer>
@@ -24,7 +25,7 @@
 
     <section class="col-8 offset-2 mt-4 mb-3">
         <div *ngIf="!loading">
-            <mat-card *ngFor="let user of users" class="example-card" (click)="drawer.toggle()">
+            <mat-card *ngFor="let user of users" class="example-card" (click)="openSideBar(drawer, user.id)">
                 <div class="row">
                     <div class="col-8">
                         <mat-card-title-group>
