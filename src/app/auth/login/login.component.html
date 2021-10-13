@@ -1,0 +1,31 @@
+<p>
+  <mat-toolbar color="primary" class="animate__animated animate__slideInDown">
+    <span style="width: 100%;" class="text-center"></span>
+  </mat-toolbar>
+</p>
+
+<div class="container mt-5" class="form-container animate__bounceIn">
+  <section>
+    <form (submit)="login()" [formGroup]="loginForm">
+      <h2 class="text-center">Bienvenido</h2>
+      <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input #email matInput type="email" formControlName="email">
+        
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input #password matInput type="password" formControlName="password">
+        
+      </mat-form-field>
+
+      <div class="row" >
+        <div class="col text-center">
+          <button mat-raised-button color="primary">Iniciar sesión</button>
+        </div>
+      </div>
+      
+    </form>
+  </section>
+</div>

@@ -1,3 +1,18 @@
+# Requirements
+
+NodeJS lastest estable version:
+
+https://nodejs.org/es/
+
+Angular installation:
+run this command after nodejs installation
+
+`npm install -g @angular/cli`
+
+Install NodeModules to start the project:
+
+`npm install`
+
 # AngularTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
