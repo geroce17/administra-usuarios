@@ -12,10 +12,10 @@ import { MatDrawer } from '@angular/material/sidenav';
   styleUrls: ['./user-list.component.css']
 })
 
-export class UserListComponent implements OnInit, AfterViewInit {
+export class UserListComponent implements OnInit {
 
   public title: string = "Listado de usuarios";
-  public loading = true;
+  public loading = false;
 
   public currentPage: number = 1;
   public list: ItemUserListInterface;
@@ -28,17 +28,16 @@ export class UserListComponent implements OnInit, AfterViewInit {
 
   constructor(private userService: UserService) { }
 
-  ngAfterViewInit() {
-
-  }
-
   ngOnInit() {
     this.getUsuariosByPage();
   }
 
   public handlePage(e: any) {
     this.currentPage = this.paginator.pageIndex + 1;
+
+    this.loading = true;
     this.updateList();
+    this.loading = false;
   }
 
   getUsuariosByPage() {
@@ -52,11 +51,9 @@ export class UserListComponent implements OnInit, AfterViewInit {
   }
 
   updateList() {
-    this.loading = true;
     this.userService.getUserList(this.currentPage)
       .subscribe(res => {
         this.users = res.data;
-        this.loading = false;
       });
   }
 

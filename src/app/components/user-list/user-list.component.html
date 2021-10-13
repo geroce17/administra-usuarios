@@ -7,14 +7,15 @@
       </button> -->
 
         <div class="sidebar-container">
-            <app-user-detail-sidebar *ngIf="selectedUser" [user]="selectedUser" (closeElement)="closeSideBar($event, drawer)"></app-user-detail-sidebar>
+            <app-user-detail-sidebar *ngIf="selectedUser" [user]="selectedUser"
+                (closeElement)="closeSideBar($event, drawer)"></app-user-detail-sidebar>
             <div *ngIf="!selectedUser" style="width: 400px;">cargando...</div>
         </div>
 
     </mat-drawer>
 
-    <div class="col-8 offset-2 mt-3">
-        <span class="title">{{title}}</span>
+    <div class="col-8 offset-2 mt-3 text-center">
+        <span class="title ">{{title}}</span>
     </div>
 
     <!-- <div class="example-sidenav-content">
@@ -23,8 +24,8 @@
       </button>
     </div> -->
 
-    <section class="col-8 offset-2 mt-3 mb-3">
-        <div *ngIf="!loading">
+    <div *ngIf="!loading" class="col-8 offset-2 mt-3 mb-3" style="height: calc(100vh - 154px);">
+        <div>
             <mat-card *ngFor="let user of users" class="example-card" (click)="openSideBar(drawer, user.id)">
                 <div class="row">
                     <div class="col-8">
@@ -41,6 +42,11 @@
         </div>
         <mat-paginator [length]="total" [pageSize]="6" aria-label="Select page" (page)="handlePage($event)">
         </mat-paginator>
-    </section>
+    </div>
+    <div *ngIf="loading" class="col-8 offset-2 mt-3" style="height: calc(100vh - 120px);">
+        <div style="top: calc(50vh - 200px); position: relative;">
+            <mat-spinner style="margin: auto"></mat-spinner>
+        </div>
+    </div>
 
 </mat-drawer-container>

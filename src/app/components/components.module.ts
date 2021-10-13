@@ -18,7 +18,7 @@ import { UserPostsComponent } from './user-posts/user-posts.component';
         CommonModule,
         AppAngularMaterialModule,
         FormsModule,
-        ReactiveFormsModule,
+        ReactiveFormsModule
     ],
     exports: [
         UserListComponent,
