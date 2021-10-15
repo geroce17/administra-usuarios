@@ -6,12 +6,14 @@ import { CommonModule } from "@angular/common";
 import { UserDetailSidebarComponent } from './user-detail-sidebar/user-detail-sidebar.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { UserPostsComponent } from './user-posts/user-posts.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
     declarations: [
         UserListComponent,
         UserDetailSidebarComponent,
-        UserPostsComponent
+        UserPostsComponent,
+        ChildComponent
     ],
     imports: [
         BrowserModule,

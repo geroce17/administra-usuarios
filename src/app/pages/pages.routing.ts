@@ -1,11 +1,30 @@
 import { Routes, RouterModule } from "@angular/router";
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { AuthModule } from '../auth/auth.module';
 import { AuthGuard } from '../guards/auth.guard';
+import { PagesComponent } from './pages.component';
+import { ChildComponent } from '../components/child/child.component';
+import { CamerasComponent } from './cameras/cameras.component';
+import { MonitorComponent } from './monitor/monitor.component';
 
 const routes: Routes = [
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+    {
+        path: 'home',
+        component: PagesComponent,
+        canActivate: [AuthGuard],
+        children: [
+            { path: '', component: HomeComponent },
+        ]
+    },
+    {
+        path: 'cameras',
+        component: PagesComponent,
+        canActivate: [AuthGuard],
+        children: [
+            { path: ':monitor', component: CamerasComponent },
+        ]
+    },
+
 ];
 
 @NgModule({

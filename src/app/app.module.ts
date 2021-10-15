@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 import { ComponentsModule } from './components/components.module';
+import { AppAngularMaterialModule } from './shared/app.angular-material.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ComponentsModule } from './components/components.module';
     AuthModule,
     ComponentsModule,
     BrowserAnimationsModule,
+    AppAngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

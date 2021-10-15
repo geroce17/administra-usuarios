@@ -1,0 +1,17 @@
+<p>
+    <mat-toolbar color="primary">
+        <span style="width: 100%;" class="h3">
+            Administrador de usuarios
+        </span>
+        <div>
+            <button mat-raised-button color="accent" [routerLink]="['/cameras']" >Open cameras</button>
+            <button mat-raised-button color="warn" (click)="cerrarSesion()">Salir</button>
+        </div>
+    </mat-toolbar>
+</p>
+
+<div style="height: calc(100vh - 64px);">
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+</div>
