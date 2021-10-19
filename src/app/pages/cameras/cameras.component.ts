@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cameras',
@@ -8,12 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CamerasComponent implements OnInit {
 
-  monitor: string;
+  monitor: number;
 
-  constructor(private router: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    
+    this.monitor = 1;
+  }
+
+  consultar() {
+    this.router.navigate(['/cameras', this.monitor]);
   }
 
 }

@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { CamerasComponent } from './cameras/cameras.component';
 import { MonitorComponent } from './monitor/monitor.component';
 import { CookieService } from 'ngx-cookie-service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CookieService } from 'ngx-cookie-service';
     CommonModule,
     ComponentsModule,
     AppAngularMaterialModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     PagesComponent,

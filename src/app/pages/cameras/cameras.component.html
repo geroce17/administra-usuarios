@@ -1,4 +1,10 @@
 <div class="container">
-    <h1 class="text-center">Monitoreo</h1>
+    <div class="text-center">
+        <h1 class="text-center">Monitoreo</h1>
+        <div>
+            <input type="text" [(ngModel)]="monitor">
+            <button mat-raised-button color="accent" (click)="consultar()">consultar</button>
+        </div>
+    </div>
     <app-monitor></app-monitor>
 </div>

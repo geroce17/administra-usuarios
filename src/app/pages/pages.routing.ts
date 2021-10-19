@@ -21,7 +21,20 @@ const routes: Routes = [
         component: PagesComponent,
         canActivate: [AuthGuard],
         children: [
-            { path: ':monitor', component: CamerasComponent },
+            {
+                path: '',
+                component: CamerasComponent,
+                children: [
+                    { path: '', component: MonitorComponent },
+                ]
+            },
+            {
+                path: ':monitor',
+                component: CamerasComponent,
+                children: [
+                    { path: '', component: MonitorComponent }
+                ]
+            }
         ]
     },
 

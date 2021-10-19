@@ -1,4 +1,11 @@
-<canvas id="canvasId" #canvasRef></canvas>
-<div class="zone-btn">
-    <button (click)="clearZone()" type="button">Limpiar</button>
+<div *ngIf="monitor" class="">
+    <canvas class="text-center" id="canvasId" #canvasRef></canvas>
+    <div class="zone-btn">
+        <button (click)="clearZone()" type="button">Limpiar</button>
+    </div>
+    <div class="text-center">
+        <textarea type="text" placeholder="escribe algo" value="" [(ngModel)]="customText" (keyup)="escribirTexto()"></textarea>
+    </div>
+
+    <h3>{{cont}}</h3>
 </div>
